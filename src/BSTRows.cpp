@@ -70,20 +70,20 @@ void adding(struct node *root, int i, int *output, int *j)
 }
 int* BSTRighttoLeftRows(struct node* root)
 {
-		int *output, i, height, j = 0;
-		struct node *temp;
-		temp = (struct node *)malloc(sizeof(struct node) * 1);
-		temp = root;
-		output = (int *)malloc(sizeof(int)* 100);
-		if (root == NULL)
-			return NULL;
-		else
+	int *output, i, height, j = 0;
+	struct node *temp;
+	temp = (struct node *)malloc(sizeof(struct node) * 1);
+	temp = root;
+	output = (int *)malloc(sizeof(int)* 100);
+	if (root == NULL)
+		return NULL;
+	else
+	{
+		height = get_height1(temp);
+		for (i = 1; i <= height; i++)
 		{
-			height = get_height1(temp);
-			for (i = 1; i <=height; i++)
-			{
-				adding(root, i, output, &j);
-			}
+			adding(root, i, output, &j);
 		}
-		return output;
+	}
+	return output;
 }
